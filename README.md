@@ -29,8 +29,7 @@ Deploy automatizado de app frontend Vue.Js com Gitlab CI + AWS S3 e CloudFront.
 - Adicionar variável: S3_BUCKET_NAME
 
 
-* Espero que este código seja útil.
-* Para maiores informações consultar documentação.
+_Espero que este código seja útil. Para maiores informações consultar documentação._
 
 
 ## Referências:
