@@ -3,31 +3,30 @@
 Deploy automatizado de app frontend Vue.Js com Gitlab CI + AWS S3 e CloudFront.
 
 ## AWS: Criar Bucket S3 (Ex: exemplo.meudominio.com.br)
--> Propriedades > Hospedagem de site estático > *Usar este bucket para hospedar um site*
--> Permissões >  Política de Bucket > Editorpolítica de bucket > *Adicionar política*
+- Propriedades > Hospedagem de site estático > *Usar este bucket para hospedar um site*
+- Permissões >  Política de Bucket > Editorpolítica de bucket > *Adicionar política*
 
 ## AWS: Criar certificado SSL em Certificate Manager
--> Solicitar um certificado público
--> Adicionar DNS ao Route 53
+- Solicitar um certificado público
+- Adicionar DNS ao Route 53
 
 ## AWS: Criar Cloudfront
--> Criar distribuição -> Web
+- Criar distribuição -> Web
 
 ## AWS: Route53
--> Criar apontamento Alias (Clodfront) - A
+- Criar apontamento Alias (Clodfront) - A
 
 ## IAM: Criar usuário com permissão
 
 ## Gitlab: Criar arquivo .gitlab-ci.yml
--> Adicionar conteúdo no arquivo
+- Adicionar conteúdo no arquivo
 
 ## Gitlab: 
--> Settings -> CI/CD -> Variables -> *Adicionar variáveis*
-
-- AWS_ACCESS_KEY_ID
-- AWS_SECRET_ACCESS_KEY
-- CLOUD_FRONT_ID
-- S3_BUCKET_NAME
+- Settings -> CI/CD -> Variables
+- Adicionar variável: AWS_ACCESS_KEY_ID
+- Adicionar variável: AWS_SECRET_ACCESS_KEY
+- Adicionar variável: CLOUD_FRONT_ID
+- Adicionar variável: S3_BUCKET_NAME
 
 
 Este é o processo resumido, para maiores informações consultar documentação.
