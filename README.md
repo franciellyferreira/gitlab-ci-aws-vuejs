@@ -29,9 +29,10 @@ Deploy automatizado de app frontend Vue.Js com Gitlab CI + AWS S3 e CloudFront.
 - Adicionar variável: S3_BUCKET_NAME
 
 
-Este é o processo resumido, para maiores informações consultar documentação.
+* Espero que este código seja útil.
+* Para maiores informações consultar documentação.
 
 
-Referências:
+## Referências:
 - Using Gitlab CI/CD to Auto Deploy Your Vue.js Application to AWS: https://hackernoon.com/using-gitlab-ci-cd-to-auto-deploy-your-vue-js-application-to-aws-s3-9affe1eb3457
 - How to use GitLab CI/CD for Vue.js https://about.gitlab.com/blog/2017/09/12/vuejs-app-gitlab/
