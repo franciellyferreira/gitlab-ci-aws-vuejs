@@ -1,0 +1,37 @@
+stages:
+  - build
+  - deploy
+
+build:
+   image: node:10.15.0-stretch
+   stage: build
+   only:
+      - master
+   script:
+      - npm install -g @vue/cli@latest
+      - npm install
+      - npm run build
+      - echo "Sucesso no processo de Build."
+   artifacts:
+      paths:
+         - dist/
+      expire_in: 20 mins
+
+deploy:  
+   image: python:latest
+   stage: deploy
+   dependencies:
+      - build
+   only:
+      - master
+   script:    
+      - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
+      - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
+      - export AWS_REGION=$AWS_REGION
+      - export CLOUD_FRONT_ID=$CLOUD_FRONT_ID
+      - export S3_BUCKET_NAME=$S3_BUCKET_NAME
+      - pip install awscli --upgrade --user
+      - export PATH=~/.local/bin:$PATH
+      - aws cloudfront create-invalidation --distribution-id $CLOUD_FRONT_ID --paths "/*"
+      - aws s3 sync --acl public-read --delete dist s3://$S3_BUCKET_NAME
+      - echo "Sucesso no processo de Deploy."
